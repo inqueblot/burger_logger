@@ -1,7 +1,17 @@
 const orm = require("../config/orm");
 
-orm.selectAll();
+const burger = {
+    all: function (cb) {
+        orm.selectAll(function (res) {
+            cb(res);
+        });
+    },
 
-orm.insertOne("burger_name");
+    create: function (burger_name, cb) {
+        orm.insertOne(burger_name, function (res) {
+            cb(res);
+        });
+    }
+};
 
 module.exports = burger;

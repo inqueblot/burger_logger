@@ -10,7 +10,7 @@ const orm = {
             cb(result);
         });
     },
-    insertOne: function (cb) {
+    insertOne: function (value, cb) {
         var queryString = "INSERT INTO burgers (burger_name, devoured) VALUES (?, FALSE)"
         connection.query(queryString, [req.body.burgers], function (err, data) {
             if (err) {
@@ -21,7 +21,7 @@ const orm = {
         });
 
     },
-    updateOne()
-};
+    // updateOne()
+}
 
 module.exports = orm;
