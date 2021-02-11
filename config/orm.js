@@ -21,7 +21,14 @@ const orm = {
         });
 
     },
-    // updateOne()
-}
+    updateOne: function (idVal, cb) {
+        connection.query(`UPDATE burgers SET devoured = true WHERE id = ${idVal}`, function (err, result) {
+            if (err) {
+                throw err;
+            }
+            cb(result);
+        });
+    }
+};
 
 module.exports = orm;
