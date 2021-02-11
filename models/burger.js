@@ -14,6 +14,12 @@ const burger = {
             // console.log(res);
             cb(res);
         });
+    },
+
+    update: function (idVal, cb) {
+        orm.updateOne(idVal, function (res) {
+            cb(res);
+        });
     }
 };
 
