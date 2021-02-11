@@ -11,7 +11,7 @@ const burger = {
 
     create: function (burger_name, cb) {
         orm.insertOne(burger_name, function (res) {
-            console.log(res);
+            // console.log(res);
             cb(res);
         });
     }

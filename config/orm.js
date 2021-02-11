@@ -12,11 +12,11 @@ const orm = {
     },
     insertOne: function (value, cb) {
         var queryString = "INSERT INTO burgers (burger_name, devoured) VALUES (?, FALSE)"
-        connection.query(queryString, [req.body.burgers], function (err, result) {
+        connection.query(queryString, value, function (err, result) {
             if (err) {
                 res.status(500).end();
             }
-            console.log(result);
+            // console.log(result);
             cb(result);
         });
 
