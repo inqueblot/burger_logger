@@ -21,6 +21,12 @@ router.post("/api/burger", function (req, res) {
     })
 
 
-})
+});
+
+router.put("api/burger/:id", function (req, res) {
+    burger.update(req.param.id, function (result) {
+
+    });
+});
 
 module.exports = router;
