@@ -6,18 +6,18 @@ const orm = {
             if (err) {
                 throw err;
             }
-            console.log(result);
+            // console.log(result);
             cb(result);
         });
     },
     insertOne: function (value, cb) {
         var queryString = "INSERT INTO burgers (burger_name, devoured) VALUES (?, FALSE)"
-        connection.query(queryString, [req.body.burgers], function (err, data) {
+        connection.query(queryString, [req.body.burgers], function (err, result) {
             if (err) {
                 res.status(500).end();
             }
-            console.log(data);
-            cb(data);
+            console.log(result);
+            cb(result);
         });
 
     },
