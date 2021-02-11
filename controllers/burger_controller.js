@@ -8,9 +8,8 @@ router.get("/", function (req, res) {
     burger.all(function (data) {
         let obj = {
             burgers: data
-        };
 
-        // console.log(obj);
+        };
         res.render("index", obj);
     })
 });
@@ -23,9 +22,10 @@ router.post("/api/burger", function (req, res) {
 
 });
 
-router.put("api/burger/:id", function (req, res) {
-    burger.update(req.param.id, function (result) {
-
+router.put("/api/burger/:id", function (req, res) {
+    burger.update(req.params.id, function (result) {
+        console.group(result.changedRows)
+        res.status(200).end();
     });
 });
 

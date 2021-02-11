@@ -4,10 +4,21 @@
 
 <ul>
     {{#each burgers}}
-    <li>
+    {{#unless devoured}}
+    {{> burgers/burger-block devoured=true}}
+    {{/unless}}
+    {{!-- <li>
         <p>ID: {{this.id}}</p>
         <p>burger_name: {{this.burger_name}}</p>
-    </li>
+    </li> --}}
+    {{/each}}
+</ul>
+<h3> I got hungry</h3>
+<ul>
+    {{#each burgers}}
+    {{#if devoured}}
+    {{> burgers/burger-block devoured=false}}
+    {{/if}}
     {{/each}}
 </ul>
 
